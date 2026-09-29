@@ -1,0 +1,54 @@
+.button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 13px 17px;
+  font-size: 13px;
+  font-weight: 650;
+  min-height: 44px;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+.button.primary {
+  background: var(--accent);
+  color: var(--card);
+}
+.button.secondary {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--text);
+}
+.button.ghost {
+  background: transparent;
+  color: var(--muted);
+}
+.button.danger {
+  background: #a13636;
+  color: #fff;
+}
+.button:hover:not(:disabled) {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+}
+.button:disabled {
+  opacity: 0.6;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.actions:not(.compact) .primary {
+  flex: 1;
+}
+.compact .button {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  .button:hover:not(:disabled) {
+    transform: none;
+  }
+}
